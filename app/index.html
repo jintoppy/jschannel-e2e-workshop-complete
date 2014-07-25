@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en" ng-app="phonecatApp">
+<head>
+  <meta charset="utf-8">
+  <title>Google Phone Gallery</title>
+  <link rel="stylesheet" href="bower_components/bootstrap.min.css">
+  <link rel="stylesheet" href="css/app.css">
+  <script src="bower_components/angular.min.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/controllers.js"></script>
+</head>
+<body ng-controller="PhoneListCtrl">
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-2">
+        <!--Sidebar content-->
+
+        Search: <input ng-model="query">        
+      </div>
+      <div class="col-md-10">
+        <!--Body content-->
+
+        <ul class="phones">
+          <li ng-repeat="phone in phones | filter:query">
+            <a href="#" ng-click="showSummary(phone)"> {{phone.name}}</a>
+            <p>{{phone.snippet}}</p>
+          </li>
+        </ul>
+
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,1 @@
+Sample application for JSChannel E2E workshop
